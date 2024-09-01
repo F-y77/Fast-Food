@@ -2,8 +2,8 @@ require "prefabutil"
 
 local assets =
 {
-  Asset("ANIM", "anim/pancake.zip"),
-  Asset("ATLAS", "images/inventoryimages/pancake.xml"),
+  Asset("ANIM", "anim/fries.zip"),
+  Asset("ATLAS", "images/inventoryimages/fries.xml"),
 }
 
 local function fn(Sim)
@@ -14,8 +14,8 @@ local function fn(Sim)
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("pancake")
-    inst.AnimState:SetBuild("pancake")
+    inst.AnimState:SetBank("fries")
+    inst.AnimState:SetBuild("fries")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("preparedfood")
@@ -27,12 +27,12 @@ local function fn(Sim)
     inst.entity:SetPristine()
 
     inst:AddComponent("edible")
-    inst.components.edible.foodtype = "MEAT"
+    inst.components.edible.foodtype = "GOODIES"
     inst.components.edible.foodstate = "PREPARED"
 
-    inst.components.edible.healthvalue = 5
-    inst.components.edible.hungervalue = 65
-    inst.components.edible.sanityvalue = 25
+    inst.components.edible.healthvalue = -10
+    inst.components.edible.hungervalue = 75
+    inst.components.edible.sanityvalue = 20
 
     inst:AddComponent("stackable")
     inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
@@ -40,7 +40,7 @@ local function fn(Sim)
     inst:AddComponent("inspectable")
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/pancake.xml"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/fries.xml"
 
     MakeHauntableLaunch(inst)
 
@@ -51,8 +51,8 @@ local function fn(Sim)
 
 return inst
 end
-STRINGS.NAMES.PANCAKE = "番茄肉夹馍"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.PANCAKE = "番茄与大肉的美好组合。"
+STRINGS.NAMES.FRIES = "炸薯条"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.FRIES = "香喷喷的油炸土豆丝，吃多了有害身体健康。"
 
 
-return Prefab("common/inventory/pancake", fn, assets, prefabs )
+return Prefab("common/inventory/fries", fn, assets, prefabs )

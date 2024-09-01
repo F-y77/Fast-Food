@@ -2,8 +2,8 @@ require "prefabutil"
 
 local assets =
 {
-  Asset("ANIM", "anim/pancake.zip"),
-  Asset("ATLAS", "images/inventoryimages/pancake.xml"),
+  Asset("ANIM", "anim/sushi_roll.zip"),
+  Asset("ATLAS", "images/inventoryimages/sushi_roll.xml"),
 }
 
 local function fn(Sim)
@@ -14,8 +14,8 @@ local function fn(Sim)
 
     MakeInventoryPhysics(inst)
 
-    inst.AnimState:SetBank("pancake")
-    inst.AnimState:SetBuild("pancake")
+    inst.AnimState:SetBank("sushi_roll")
+    inst.AnimState:SetBuild("sushi_roll")
     inst.AnimState:PlayAnimation("idle")
 
     inst:AddTag("preparedfood")
@@ -30,8 +30,8 @@ local function fn(Sim)
     inst.components.edible.foodtype = "MEAT"
     inst.components.edible.foodstate = "PREPARED"
 
-    inst.components.edible.healthvalue = 5
-    inst.components.edible.hungervalue = 65
+    inst.components.edible.healthvalue = 30
+    inst.components.edible.hungervalue = 55
     inst.components.edible.sanityvalue = 25
 
     inst:AddComponent("stackable")
@@ -40,19 +40,19 @@ local function fn(Sim)
     inst:AddComponent("inspectable")
 
     inst:AddComponent("inventoryitem")
-    inst.components.inventoryitem.atlasname = "images/inventoryimages/pancake.xml"
+    inst.components.inventoryitem.atlasname = "images/inventoryimages/sushi_roll.xml"
 
     MakeHauntableLaunch(inst)
 
     inst:AddComponent("perishable")
-    inst.components.perishable:SetPerishTime(TUNING.PERISH_SLOW)
+    inst.components.perishable:SetPerishTime(TUNING.PERISH_MED)
     inst.components.perishable:StartPerishing()
     inst.components.perishable.onperishreplacement = "spoiled_food"
 
 return inst
 end
-STRINGS.NAMES.PANCAKE = "番茄肉夹馍"
-STRINGS.CHARACTERS.GENERIC.DESCRIBE.PANCAKE = "番茄与大肉的美好组合。"
+STRINGS.NAMES.SUSHI_ROLL = "寿司串"
+STRINGS.CHARACTERS.GENERIC.DESCRIBE.SUSHI_ROLL = "清淡的鱼类米食。"
 
 
-return Prefab("common/inventory/pancake", fn, assets, prefabs )
+return Prefab("common/inventory/sushi_roll", fn, assets, prefabs )
