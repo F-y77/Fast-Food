@@ -18,4 +18,12 @@ HEALTH-10,HUNGER+75,SANITY+20.
 HEALTH=30,HUNGER=50,SANITY=25
 腐烂中，40一组。
 
+贴图地址：https://captainskolot.itch.io/30-fast-food-asset-pixel-art
+
+贴图license:
+
+- We want you to have the freedom to use this asset pack in both your free and commercial projects.
+- Feel free to modify the assets to suit your unique needs. While credit is not required, we genuinely appreciate any attribution given.
+- You may not redistribute or resell the assets on their own, that includes NFT/images asset compilations.
+- 
 
