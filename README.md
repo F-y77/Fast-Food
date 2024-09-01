@@ -24,5 +24,5 @@ HEALTH=30,HUNGER=50,SANITY=25
 - Feel free to modify the assets to suit your unique needs. While credit is not required, we genuinely appreciate any attribution given.
 - You may not redistribute or resell the assets on their own, that includes NFT/images asset compilations.
 
-[url=https://captainskolot.itch.io/30-fast-food-asset-pixel-art] 原画地址[/url] 可以免费使用 
+https://captainskolot.itch.io/30-fast-food-asset-pixel-art 原画地址 可以免费使用 
 
