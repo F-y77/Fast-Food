@@ -35,7 +35,7 @@ local function fn(Sim)
     inst.components.edible.sanityvalue = 20
 
     inst:AddComponent("stackable")
-    inst.components.stackable.maxsize = TUNING.STACK_SIZE_SMALLITEM
+    inst.components.stackable.maxsize = 30
 
     inst:AddComponent("inspectable")
 

@@ -30,12 +30,12 @@ local function fn(Sim)
     inst.components.edible.foodtype = "MEAT"
     inst.components.edible.foodstate = "PREPARED"
 
-    inst.components.edible.healthvalue = 3
+    inst.components.edible.healthvalue = 13
     inst.components.edible.hungervalue = 150
-    inst.components.edible.sanityvalue = 17
+    inst.components.edible.sanityvalue = 27
 
     inst:AddComponent("stackable")
-    inst.components.stackable.maxsize = TUNING.STACK_SIZE_LARGEITEM
+    inst.components.stackable.maxsize = 7
 
     inst:AddComponent("inspectable")
 
