@@ -18,6 +18,11 @@ HEALTH-10,HUNGER+75,SANITY+20.
 HEALTH=30,HUNGER=50,SANITY=25
 腐烂中，40一组。
 
+4.披萨
+番茄+鸟蛋必须有，蔬菜>0.5 肉>0.5
+HEALTH+3,HUNGER+150,SANITY+17.
+腐烂中，10一组。
+
 贴图地址：https://captainskolot.itch.io/30-fast-food-asset-pixel-art
 
 贴图license:

@@ -8,18 +8,23 @@ local assets = {
 	Asset("ATLAS", "images/inventoryimages/sushi_roll.xml"),
     Asset("IMAGE", "images/inventoryimages/sushi_roll.tex"),
 
+    Asset("ATLAS", "images/inventoryimages/pizza.xml"),
+    Asset("IMAGE", "images/inventoryimages/pizza.tex"),
+
 }
 
 
 PrefabFiles = {
 	"pancake",
 	"fries",
-	"sushi_roll"
+	"sushi_roll",   
+    "pizza",
 }
 
 AddIngredientValues({"pancake"}, {pancake = 1})
 AddIngredientValues({"fries"}, {fries = 1})
 AddIngredientValues({"sushi_roll"}, {sushi_roll = 1})
+AddIngredientValues({"pizza"}, {pizza = 1})
 
 local pancake =
     {
@@ -31,7 +36,7 @@ local pancake =
         perishtime = TUNING.PERISH_SLOW,
         cooktime = 0.7,
 		potlevel = "low",    
-        --floater = {"med", nil, 0.6},
+        floater = {"med", nil, 0.6},
 }
 
 local fries =
@@ -44,7 +49,7 @@ local fries =
         perishtime = TUNING.PERISH_SLOW,
         cooktime = 0.6,
 		potlevel = "low",    
-        --floater = {"med", nil, 0.5},
+        floater = {"med", nil, 0.5},
 }
 
 local sushi_roll =
@@ -57,9 +62,21 @@ local sushi_roll =
         perishtime = TUNING.PERISH_MED,
         cooktime = 0.4,
 		potlevel = "low",    
-        --floater = {"med", nil, 0.7},
+        floater = {"med", nil, 0.7},
 }
 
+local pizza =
+    {
+	name = "pizza",
+	    test = function(cooker, names, tags) return (names.tomato or names.tomato_cooked) and (names.bird_egg or names.bird_egg_cooked) and tags.meat and tags.meat >= 0.5 and tags.vegetable and tags.vegetable >= 0.5 end,
+        priority = 20,
+	    weight = 1,
+        foodtype = GLOBAL.FOODTYPE.MEAT, 
+        perishtime = TUNING.PERISH_SLOW,
+        cooktime = 0.8,
+		potlevel = "low",    
+        floater = {"med", nil, 0.8},
+}
 
 
 AddCookerRecipe("cookpot", pancake)
@@ -73,3 +90,7 @@ AddCookerRecipe("archive_cookpot", fries)
 AddCookerRecipe("cookpot", sushi_roll)
 AddCookerRecipe("portablecookpot", sushi_roll)
 AddCookerRecipe("archive_cookpot", sushi_roll)
+
+AddCookerRecipe("cookpot", pizza)
+AddCookerRecipe("portablecookpot", pizza)
+AddCookerRecipe("archive_cookpot", pizza)   
