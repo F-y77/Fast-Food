@@ -1,6 +1,3 @@
-foodtype = GLOBAL.FOODTYPE.MEAT
-perishtime = TUNING.PERISH_SLOW
-
 local assets = {
 	Asset("ATLAS", "images/inventoryimages/pancake.xml"),
     Asset("IMAGE", "images/inventoryimages/pancake.tex"),
